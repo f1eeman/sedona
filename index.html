@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
 </head>
 
 <body>
@@ -80,14 +81,19 @@
             </ol>
         </section>
         <section class="appointment">
-            <h2 class=>Поиск гостиницы в Седоне</h2>
-            <span>Заинтересовались?</span>
+            <h2>Заинтересовались?</h2>
             <p class="appointment-info">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в седоне</p>
+            <button class="btn open-modal-popup">Поиск гостиницы в Седоне</button>
             <!--Здесь будет форма-->
+        </section>
+        <section class="map">
+            <img src="img/map.jpg" width="1200" height="593" alt="State: Arizona, city: Sedona">
         </section>
     </main>
     <footer class="main-footer">
-        <p class="footer-heshtag">#visitsedona</p>
+        <p class="footer-heshtag">
+            <a href="#">#visitsedona</a>
+        </p>
         <div class="footer-social">
             <ul>
                 <li><a class="social-button" href="#">Twitter</a></li>
@@ -97,9 +103,32 @@
         </div>
         <p class="footer-copyright">
             <span>Website by</span>
-            <a class="button" href="https://htmlacademy.ru">HTML Academy</a>
+            <a href="https://htmlacademy.ru">
+                <img src="img/logo-htmlacademy.svg" width="115" height="41" alt="html academy">
+            </a>
         </p>
     </footer>
+    <section class="modal-appointment">
+        <form class="appointment-form" action="https://acho.htmlacademy.ru" method="POST">
+            <p class="appoitment-item">
+                <label for="arrival-date">Дата заезда:</label>
+                <input type="text" name="arrival-date" id="arrival-date" value="24 апреля 2017">
+            </p>
+            <p class="appoitment-item">
+                <label for="departure-date">Дата выезда:</label>
+                <input type="text" name="departure-date" id="departure-date" value="4 июля 2017">
+            </p>
+            <p class="appoitment-item">
+                <label for="adults">Взрослые:</label>
+                <input type="text" name="adults" id="adults" value="2">
+            </p>
+            <p class="appoitment-item">
+                <label for="children">Дети:</label>
+                <input type="text" name="children" id="children" value="0">
+            </p>
+            <button class="btn modal-button" type="submit">Найти</button>
+        </form>
+    </section>
 </body>
 
 </html>
