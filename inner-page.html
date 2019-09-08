@@ -4,12 +4,14 @@
 <head>
     <title>HOTELS</title>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
-<body>
-    <header class="main-header">
+<body class="inner-page">
+    <header class="main-header container">
         <nav class="main-navigation">
             <a href="index.html" class="main-header-logo">
                 <img src="img/logo.png" width="138" height="70" alt="Логотип Седона">
@@ -22,7 +24,7 @@
             </ul>
         </nav>
     </header>
-    <main class="conatiner">
+    <main class="container">
         <h1 class="visually-hidden">Гостиницы</h1>
         <section class="filters">
             <h2 class="visually-hidden">Фильтр товаров</h2>
@@ -70,7 +72,7 @@
                         <input type="text" name="price-per-day-to" id="price-per-day-to">
                     </div>
                 </fieldset>
-                <button type="submit" class="filter-button button">Показать</button>
+                <button type="submit" class="filter-button btn">Показать</button>
             </form>
         </section>
         <div class="seach-results-and-sort">
@@ -78,11 +80,11 @@
             <div class="sort">
                 <span class="sort-title">Сортировка:</span>
                 <ul class="sort-list-type-1">
-                    <li class="sort-item">
-                        <a href="#"><span class="sort-by-type">По типу</span></a>
+                    <li class="sort-item sort-list-type-1-current">
+                        <a href="#"><span class="sort-by-price">По цене</span></a>
                     </li>
                     <li class="sort-item">
-                        <a href="#"><span class="sort-by-price">По цене</span></a>
+                        <a href="#"><span class="sort-by-type">По типу</span></a>
                     </li>
                     <li class="sort-item">
                         <a href="#"><span class="sort-by-rating">По рейтингу</span></a>
@@ -92,7 +94,7 @@
                     <li class="sort-item">
                         <a href="#"><span class="sort-acending"></span>По возрастанию</a>
                     </li>
-                    <li class="sort-item">
+                    <li class="sort-item sort-list-type-2-current">
                         <a href="#"><span class="sort-descending"></span>По убыванию</a>
                     </li>
                 </ul>
@@ -114,7 +116,7 @@
                         </p>
                     </div>
                     <p class="catalog-item-image">
-                        <a href="catalog-item.html">
+                        <a href="catalog-item.html" class="link-item-image">
                             <img src="img/Amara Resort & Spa.jpg" width="135" height="90" alt="Гостиница: Amara Resort & Spa">
                         </a>
                     </p>
@@ -135,7 +137,7 @@
                         </p>
                     </div>
                     <p class="catalog-item-image">
-                        <a href="catalog-item.html">
+                        <a href="catalog-item.html" class="link-item-image">
                             <img src="img/Desert Quail Inn.jpg" width="135" height="90" alt="Мотель: Desert Quail Inn">
                         </a>
                     </p>
@@ -156,7 +158,7 @@
                         </p>
                     </div>
                     <p class="catalog-item-image">
-                        <a href="catalog-item.html">
+                        <a href="catalog-item.html" class="link-item-image">
                             <img src="img/Villas at Poco Diablo.jpg" width="135" height="90" alt="Гостиница: Villas at Poco Diablo">
                         </a>
                     </p>
@@ -167,7 +169,7 @@
             </ul>
         </section>
     </main>
-    <footer class="main-footer">
+    <footer class="main-footer container">
         <p class="footer-heshtag">#visitsedona</p>
         <div class="footer-social">
             <ul>
@@ -178,7 +180,9 @@
         </div>
         <p class="footer-copyright">
             <span>Website by</span>
-            <a class="html-academy" href="https://htmlacademy.ru">HTML Academy</a>
+            <a href="https://htmlacademy.ru" class="footer-copyright-image">
+                <img src="img/logo-htmlacademy.svg" width="115" height="41" alt="html academy">
+            </a>
         </p>
     </footer>
 </body>
