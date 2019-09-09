@@ -16,7 +16,7 @@ body {
     font-weight: 700;
     color: #000000;
     text-transform: uppercase;
-    background-color: #ffffff;
+    background-color: #f2f2f2;
 }
 
 a {
@@ -49,6 +49,11 @@ input[type="checkbox"].visually-hidden {
 .container {
     width: 1200px;
     margin: 0 auto;
+    box-shadow: 0 0 30px 10px #dbdbdb;
+}
+
+.main-header {
+    background-color: #ffffff;
 }
 
 .main-navigation {
@@ -114,16 +119,27 @@ input[type="checkbox"].visually-hidden {
 
 .preview {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     min-height: 773px;
     margin: 0;
     padding: 0;
     font-size: 21px;
     line-height: 26px;
     text-align: center;
+    background-image: url("../img/preview-background.jpg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.preview p:first-of-type {
+    margin: 0;
+    margin-top: auto;
+    margin-bottom: 30px;
 }
 
 .preview p:nth-of-type(2) {
+    margin: 0;
+    margin-bottom: 50px;
     font-size: 14px;
     font-weight: 400;
 }
@@ -275,25 +291,23 @@ input[type="checkbox"].visually-hidden {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 290px;
     padding-top: 55px;
     font-weight: 400;
+    background-color: #ffffff;
 }
 
 .appointment h2 {
+    margin: 0;
     margin-bottom: 30px;
     font-size: 30px;
     line-height: 36px;
 }
 
 .appointment-info {
+    margin: 0;
     width: 575px;
     padding: 0 72px 50px;
     text-align: center;
-}
-
-.map {
-    width: 1200px;
 }
 
 .btn {
@@ -324,6 +338,147 @@ input[type="checkbox"].visually-hidden {
     color: rgba(255, 255, 255, 0.3);
 }
 
+.map {
+    width: 1200px;
+}
+
+
+/*форма на главной*/
+
+.appointment-form {
+    display: none;
+    position: fixed;
+    left: 50%;
+    bottom: 10px;
+    width: 568px;
+    min-height: 395px;
+    margin: 0;
+    padding: 55px;
+    line-height: 26px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px -5px #3f4c52;
+}
+
+.appoitment-item {
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.appoitment-item:first-of-type label {
+    margin: 0;
+    padding: 0;
+    margin-right: 18px;
+}
+
+.appoitment-item:nth-of-type(2) label {
+    margin: 0;
+    padding: 0;
+    margin-right: 14px;
+}
+
+.modal-appointment input {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    text-transform: uppercase;
+    background-color: #f2f2f2;
+    border: none;
+}
+
+.appoitment-item:first-of-type input,
+.appoitment-item:nth-of-type(2) input {
+    width: 345px;
+    margin: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    padding-right: 45px;
+}
+
+.appoitment-item:nth-of-type(3) {
+    position: relative;
+    display: inline-block;
+    margin-right: 40px;
+    margin-bottom: 55px;
+}
+
+.appoitment-item:nth-of-type(4) {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 55px;
+}
+
+.appoitment-item:nth-of-type(3) label {
+    margin: 0;
+    margin-right: 32px;
+    padding: 0;
+}
+
+.appoitment-item:nth-of-type(4) label {
+    margin: 0;
+    margin-right: 25px;
+    padding: 0;
+}
+
+.appoitment-item:nth-of-type(3) input,
+.appoitment-item:nth-of-type(4) input {
+    width: 120px;
+    margin: 0;
+    padding: 5px 40px;
+    text-align: center;
+}
+
+.modal-appointment input:hover,
+.modal-appointment input:focus {
+    outline: none;
+    background-color: #ebebeb;
+}
+
+.modal-appointment input:active {
+    outline: none;
+    background-color: #ffffff;
+    border: 2px solid #e5e5e5;
+}
+
+.appoitment-btn {
+    width: 40px;
+    height: 35px;
+    border: none;
+    background-color: transparent;
+    font: inherit;
+    font-size: 18px;
+    line-height: 10px;
+    color: #a9a9a9;
+}
+
+.btn-minus {
+    position: absolute;
+    right: 80px;
+    top: 0;
+}
+
+.btn-plus {
+    position: absolute;
+    right: 0px;
+    top: 0;
+    height: 37px;
+}
+
+.btn-minus:hover,
+.btn-minus:focus,
+.btn-plus:hover,
+.btn-plus:focus {
+    outline: none;
+    color: #000000;
+}
+
+.btn-minus:active,
+.btn-plus:active {
+    outline: none;
+    color: #81b3d2;
+}
+
 .modal-button {
     width: 458px;
     padding-top: 20px;
@@ -343,27 +498,14 @@ input[type="checkbox"].visually-hidden {
     color: rgba(255, 255, 255, 0.3);
 }
 
-.modal-appointment input {
-    font: inherit;
-    text-transform: uppercase;
-    background-color: #f2f2f2;
-    border: none;
-}
 
-.modal-appointment input:hover,
-.modal-appointment input:focus {
-    outline: none;
-    background-color: #ebebeb;
-}
-
-.modal-appointment input:active {
-    outline: none;
-    background-color: #ffffff;
-    border: 2px solid #e5e5e5;
-}
+/*footer*/
 
 .main-footer {
     display: flex;
+    height: 120px;
+    align-items: center;
+    background-color: #ffffff;
 }
 
 .footer-heshtag,
@@ -373,11 +515,8 @@ input[type="checkbox"].visually-hidden {
     text-align: center;
 }
 
-.main-footer a {
-    color: #000000;
-}
-
 .footer-heshtag a {
+    color: #000000;
     font-size: 21px;
     line-height: 26px;
 }
@@ -391,18 +530,79 @@ input[type="checkbox"].visually-hidden {
     color: rgba(0, 0, 0, 0.3);
 }
 
+.footer-social {
+    padding: 0;
+    padding-left: 124px;
+}
+
 .footer-social ul {
+    display: flex;
+    justify-content: space-between;
+    width: 152px;
+    margin: 0;
+    padding: 0;
     list-style: none;
 }
 
+.footer-social li {
+    margin: 0;
+    padding: 0;
+}
+
+.social-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46px;
+    height: 48px;
+    background-color: #81b3d2;
+}
+
+.social-button:hover,
+.social-button:focus {
+    background-color: #669ec0;
+}
+
+.social-button:active {
+    background-color: #5496bd;
+}
+
+.social-button:active path {
+    opacity: 0.3;
+}
+
 .footer-copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 14px;
     line-height: 26px;
     font-weight: 400;
 }
 
-.footer-copyright-image {
-    width: 115px;
+.footer-copyright span {
+    margin-right: 10px;
+}
+
+.html-logo {
+    line-height: 15px;
+}
+
+.html-logo path,
+.html-logo rect {
+    fill: #000000;
+}
+
+.html-logo:hover path,
+.html-logo:focus path,
+.html-logo:hover rect,
+.html-logo:focus rect {
+    fill: #81b3d2;
+}
+
+.html-logo:active path,
+.html-logo:active rect {
+    fill: #bdbbbc;
 }
 
 
@@ -558,3 +758,5 @@ input[type="checkbox"].visually-hidden {
     color: #666666;
     background-color: #f2f2f2;
 }
+
+;
