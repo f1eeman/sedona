@@ -28,6 +28,10 @@ img {
     height: auto;
 }
 
+button {
+    cursor: pointer;
+}
+
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden {
     position: absolute;
@@ -120,14 +124,16 @@ input[type="checkbox"].visually-hidden {
 .preview {
     display: flex;
     flex-direction: column;
-    min-height: 773px;
+    min-height: 725px;
     margin: 0;
     padding: 0;
+    padding-top: 550px;
     font-size: 21px;
     line-height: 26px;
     text-align: center;
+    background-color: #ffffff;
     background-image: url("../img/preview-background.jpg");
-    background-position: 0 0;
+    background-position: 0 -55px;
     background-repeat: no-repeat;
 }
 
@@ -289,6 +295,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .appointment {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -347,13 +354,14 @@ input[type="checkbox"].visually-hidden {
 /*форма на главной*/
 
 .appointment-form {
-    display: none;
-    position: fixed;
+    /* display: none; */
+    position: absolute;
     left: 50%;
-    bottom: 10px;
+    bottom: -141%;
     width: 568px;
     min-height: 395px;
     margin: 0;
+    margin-left: -284px;
     padding: 55px;
     line-height: 26px;
     background-color: #ffffff;
@@ -378,7 +386,7 @@ input[type="checkbox"].visually-hidden {
     margin-right: 14px;
 }
 
-.modal-appointment input {
+.appoitment-item input {
     margin: 0;
     padding: 0;
     font: inherit;
@@ -389,6 +397,7 @@ input[type="checkbox"].visually-hidden {
 
 .appoitment-item:first-of-type input,
 .appoitment-item:nth-of-type(2) input {
+    position: relative;
     width: 345px;
     margin: 0;
     padding-top: 8px;
@@ -397,15 +406,39 @@ input[type="checkbox"].visually-hidden {
     padding-right: 45px;
 }
 
-.appoitment-item:nth-of-type(3) {
+.appoitment-item {
     position: relative;
+}
+
+.btn-calendar {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -12px;
+    border: none;
+    background-color: transparent;
+    fill: #cacaca;
+}
+
+.btn-calendar:hover path,
+.btn-calendar:focus path,
+.btn-calendar:hover rect,
+.btn-calendar:focus rect {
+    fill: black;
+}
+
+.btn-calendar:active path,
+.btn-calendar:active rect {
+    fill: #81b3d2;
+}
+
+.appoitment-item:nth-of-type(3) {
     display: inline-block;
     margin-right: 40px;
     margin-bottom: 55px;
 }
 
 .appoitment-item:nth-of-type(4) {
-    position: relative;
     display: inline-block;
     margin-bottom: 55px;
 }
@@ -430,13 +463,13 @@ input[type="checkbox"].visually-hidden {
     text-align: center;
 }
 
-.modal-appointment input:hover,
-.modal-appointment input:focus {
+.appoitment-item input:hover,
+.appoitment-item input:focus {
     outline: none;
     background-color: #ebebeb;
 }
 
-.modal-appointment input:active {
+.appoitment-item input:active {
     outline: none;
     background-color: #ffffff;
     border: 2px solid #e5e5e5;
