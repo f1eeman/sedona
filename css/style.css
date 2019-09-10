@@ -650,23 +650,66 @@ input[type="checkbox"].visually-hidden {
 }
 
 .filters {
+    padding-top: 30px;
+    padding-bottom: 30px;
     background-color: #3f4c52;
 }
 
 .filter {
+    display: flex;
+    margin: 0;
+    padding: 0;
     color: #ffffff;
 }
 
 .filter fieldset {
+    margin: 0;
+    padding: 0;
     border: none;
+    border: 1px solid black;
 }
 
 .filter legend {
+    margin: 0;
+    padding: 0;
     font-size: 16px;
 }
 
 .filter ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
+    border: 1px solid blue;
+}
+
+.filter .filter-infrastructure,
+.filter .filter-type-housing {
+    width: 310px;
+}
+
+.filter .filter-infrastructure {
+    padding-left: 73px;
+}
+
+.filter .filter-type-housing {
+    padding-left: 10px;
+}
+
+.filter-infrastructure legend,
+.filter-type-housing legend {
+    border: 1px solid blue;
+    margin-bottom: 25px;
+}
+
+.filter-infrastructure li:not(:last-of-type),
+.filter-type-housing li:not(:last-of-type) {
+    margin-bottom: 25px;
+    padding-left: 40px;
+}
+
+.filter-infrastructure li,
+.filter-type-housing li {
+    padding-left: 40px;
 }
 
 .filter-button {
