@@ -64,13 +64,17 @@
                             </li>
                         </ul>
                     </fieldset>
-                    <fieldset>
+                    <fieldset class="price-per-day">
                         <legend>Стоимость в сутки (р):</legend>
                         <div class="box">
-                            <label for="price-per-day-from">От</label>
-                            <input type="text" name="price-per-day-from" id="price-per-day-from">
-                            <label for="price-per-day-to">До</label>
-                            <input type="text" name="price-per-day-to" id="price-per-day-to">
+                            <label class="price-from" for="price-per-day-from">От</label>
+                            <input type="text" name="price-per-day-from" id="price-per-day-from" value="0">
+                            <label class="price-to" for="price-per-day-to">До</label>
+                            <input type="text" name="price-per-day-to" id="price-per-day-to" value="3000">
+                        </div>
+                        <div class="range">
+                            <span class="begin-flag"></span>
+                            <span class="end-flag"></span>
                         </div>
                     </fieldset>
                     <button type="submit" class="filter-button btn">Показать</button>

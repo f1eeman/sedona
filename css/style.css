@@ -653,9 +653,13 @@ input[type="checkbox"].visually-hidden {
     padding-top: 30px;
     padding-bottom: 30px;
     background-color: #3f4c52;
+    background-image: url("../img/filter-background.jpg");
+    background-position: 50% -55px;
+    background-repeat: no-repeat;
 }
 
 .filter {
+    position: relative;
     display: flex;
     margin: 0;
     padding: 0;
@@ -666,7 +670,6 @@ input[type="checkbox"].visually-hidden {
     margin: 0;
     padding: 0;
     border: none;
-    border: 1px solid black;
 }
 
 .filter legend {
@@ -679,7 +682,6 @@ input[type="checkbox"].visually-hidden {
     margin: 0;
     padding: 0;
     list-style: none;
-    border: 1px solid blue;
 }
 
 .filter .filter-infrastructure,
@@ -697,22 +699,188 @@ input[type="checkbox"].visually-hidden {
 
 .filter-infrastructure legend,
 .filter-type-housing legend {
-    border: 1px solid blue;
     margin-bottom: 25px;
 }
 
 .filter-infrastructure li:not(:last-of-type),
 .filter-type-housing li:not(:last-of-type) {
     margin-bottom: 25px;
-    padding-left: 40px;
 }
 
-.filter-infrastructure li,
-.filter-type-housing li {
+.filter-infrastructure label,
+.filter-type-housing label {
+    position: relative;
     padding-left: 40px;
+    cursor: pointer;
+}
+
+.filter-infrastructure label::before,
+.filter-type-housing label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 23px;
+    height: 23px;
+    border: 2px solid white;
+    border-radius: 3px;
+}
+
+.filter-infrastructure input[type="checkbox"]:checked~label::before,
+.filter-type-housing input[type="checkbox"]:checked~label::before {
+    width: 27px;
+    border: none;
+    background: url("../img/checkbox-on.svg") no-repeat 0 0;
+}
+
+.filter-infrastructure input[type="checkbox"]:disabled:checked~label::before,
+.filter-type-housing input[type="checkbox"]:disabled:checked~label::before {
+    width: 27px;
+    border: none;
+    background: url("../img/checkbox-disabled.svg") no-repeat 0 0;
+}
+
+.filter-infrastructure input[type="checkbox"]:disabled:not(:checked)~label::before,
+.filter-type-housing input[type="checkbox"]:disabled:not(:checked)~label::before {
+    border: 2px solid #6a6a6a;
+}
+
+.filter .price-per-day {
+    margin-left: auto;
+    margin-right: 73px;
+}
+
+.price-per-day legend {
+    margin-bottom: 10px;
+}
+
+.price-per-day .box {
+    position: relative;
+    width: 315px;
+    margin-bottom: 22px;
+    border: 2px solid #ffffff;
+    border-radius: 3px;
+}
+
+.price-per-day .box::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 13px;
+    margin-left: -10px;
+    width: 20px;
+    border: 1px solid #ffffff;
+    transform: rotate(90deg);
+}
+
+.price-per-day .price-from {
+    position: absolute;
+    left: 62px;
+    top: 1px;
+    font-size: 14px;
+    line-height: 21px;
+    cursor: pointer;
+}
+
+.price-per-day .price-to {
+    position: absolute;
+    left: 207px;
+    top: 1px;
+    font-size: 14px;
+    line-height: 21px;
+    cursor: pointer;
+}
+
+.price-per-day input[type="text"] {
+    width: 65px;
+    border: none;
+    padding-bottom: 5px;
+    font: inherit;
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: transparent;
+}
+
+.price-per-day input[name="price-per-day-from"] {
+    margin-left: 85px;
+}
+
+.price-per-day input[name="price-per-day-to"] {
+    margin-left: 80px;
+}
+
+.range {
+    position: relative;
+    left: 2px;
+    width: 313px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.range::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    z-index: 10;
+    width: 245px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.begin-flag,
+.end-flag {
+    position: absolute;
+    top: -10px;
+    z-index: 100;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 3px 1px -1px gray;
+    cursor: pointer;
+    transition-duration: 0.1s;
+    transition-property: transform;
+    transform: scale(1);
+}
+
+.begin-flag:hover,
+.begin-flag:focus,
+.end-flag:hover,
+.end-flag:focus {
+    transform: scale(1.1);
+}
+
+.begin-flag {
+    left: -2px;
+}
+
+.end-flag {
+    right: 45px;
+}
+
+.begin-flag::before,
+.end-flag::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    z-index: 1000;
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    background-color: gray;
 }
 
 .filter-button {
+    position: absolute;
+    bottom: 0;
+    right: 170px;
+    width: 133px;
+    min-height: 32px;
     background-color: transparent;
     border: 2px solid #ffffff;
 }
