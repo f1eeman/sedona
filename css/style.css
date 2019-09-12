@@ -644,9 +644,7 @@ input[type="checkbox"].visually-hidden {
 
 /*Inner Page*/
 
-.site-navigation-current a,
-.site-navigation-current a:hover,
-.site-navigation-current a:focus {
+.site-navigation-current a:not([href]) {
     color: #766357;
 }
 
@@ -725,6 +723,14 @@ input[type="checkbox"].visually-hidden {
     height: 23px;
     border: 2px solid white;
     border-radius: 3px;
+}
+
+.filter-infrastructure input[type="checkbox"]:focus~label::before,
+.filter-type-housing input[type="checkbox"]:focus~label::before {
+    outline: thin dotted;
+    outline: 10px auto;
+    outline-color: #81b3d2;
+    outline-offset: 8px;
 }
 
 .filter-infrastructure input[type="checkbox"]:checked~label::before,
