@@ -91,10 +91,10 @@
                 <h2>Заинтересовались?</h2>
                 <p class="appointment-info">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в седоне</p>
                 <button class="btn open-modal-popup">Поиск гостиницы в Седоне</button>
-                <form class="appointment-form" action="https://acho.htmlacademy.ru" method="POST">
+                <form class="appointment-form" action="https://echo.htmlacademy.ru" method="POST">
                     <p class="appoitment-item">
                         <label for="arrival-date">Дата заезда:</label>
-                        <input type="text" name="arrival-date" id="arrival-date" value="24 апреля 2017">
+                        <input type="text" name="arrival-date" id="arrival-date" placeholder="24 апреля 2017" required>
                         <button class="btn-calendar" type="button">
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             width="21px" height="22px" viewBox="0 0 21 22" enable-background="new 0 0 21 22" xml:space="preserve">
@@ -121,7 +121,7 @@
                     </p>
                     <p class="appoitment-item">
                         <label for="departure-date">Дата выезда:</label>
-                        <input type="text" name="departure-date" id="departure-date" value="4 июля 2017">
+                        <input type="text" name="departure-date" id="departure-date" placeholder="4 июля 2017" required>
                         <button class="btn-calendar" type="button">
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             width="21px" height="22px" viewBox="0 0 21 22" enable-background="new 0 0 21 22" xml:space="preserve">
@@ -201,8 +201,6 @@
                         <a class="social-button" href="#"><span class="visually-hidden">Youtube</span>
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             width="20px" height="16px" viewBox="0 0 20 16" enable-background="new 0 0 20 16" xml:space="preserve">
-                                <image overflow="visible" enable-background="new    " width="20" height="16" xlink:href="youtube.png" >
-                                </image>
                                 <path fill="#FFFFFF" d="M17,0H3C1.35,0,0,1.35,0,3v10c0,1.65,1.35,3,3,3h14c1.65,0,3-1.35,3-3V3C20,1.35,18.65,0,17,0z
                                     M6.027,11.998V4.002L15.014,8L6.027,11.998z"/>
                             </svg>
@@ -230,6 +228,22 @@
             </p>
         </footer>
     </div>
+    <script>
+        const openModal = document.querySelector(".open-modal-popup");
+        const form = document.querySelector(".appointment-form");
+        const arrivalDate = form.querySelector("[name=arrival-date]")
+        openModal.addEventListener("click", function(evt) {
+            evt.preventDefault();
+            form.classList.toggle("modal-show");
+            arrivalDate.focus();
+        });
+        window.addEventListener("keydown", function(evt) {
+            if ((evt.keyCode === 27) && (form.classList.contains("modal-show"))) {
+                evt.preventDefault();
+                form.classList.remove("modal-show")
+            }
+        })
+    </script>
 </body>
 
 </html
