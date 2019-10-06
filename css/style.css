@@ -767,7 +767,7 @@ input[type="checkbox"].visually-hidden {
 .filter-infrastructure input[type="checkbox"]:focus~label::before,
 .filter-type-housing input[type="checkbox"]:focus~label::before {
     outline: thin dotted;
-    outline: 10px auto;
+    outline: 5px auto;
     outline-color: #81b3d2;
     outline-offset: 8px;
 }
