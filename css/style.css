@@ -106,6 +106,15 @@ input[type="checkbox"].visually-hidden {
     line-height: 0;
 }
 
+.main-header-logo[href]:hover,
+.main-header-logo[href]:focus {
+    opacity: 0.6;
+}
+
+.main-header-logo[href]:active {
+    opacity: 0.3;
+}
+
 .wrapper {
     width: 1055px;
     margin: 0 auto;
@@ -766,10 +775,8 @@ input[type="checkbox"].visually-hidden {
 
 .filter-infrastructure input[type="checkbox"]:focus~label::before,
 .filter-type-housing input[type="checkbox"]:focus~label::before {
-    outline: thin dotted;
-    outline: 5px auto;
-    outline-color: #81b3d2;
-    outline-offset: 8px;
+    outline: thin dotted skyblue;
+    outline-offset: 2px; 
 }
 
 .filter-infrastructure input[type="checkbox"]:checked~label::before,
@@ -789,6 +796,20 @@ input[type="checkbox"].visually-hidden {
 .filter-infrastructure input[type="checkbox"]:disabled:not(:checked)~label::before,
 .filter-type-housing input[type="checkbox"]:disabled:not(:checked)~label::before {
     border: 2px solid #6a6a6a;
+}
+
+.filter-infrastructure label:hover,
+.filter-type-housing label:hover,
+.filter-infrastructure label:hover::before,
+.filter-type-housing label:hover::before {
+    opacity: 0.8;
+}
+
+.filter-infrastructure label:active,
+.filter-type-housing label:active,
+.filter-infrastructure label:active::before,
+.filter-type-housing label:active::before {
+    opacity: 0.5;
 }
 
 .filter .price-per-day {
@@ -939,7 +960,7 @@ input[type="checkbox"].visually-hidden {
 .seach-results-and-sort {
     display: flex;
     min-height: 85px;
-    align-items: center;
+    padding-top: 30px;
     font-size: 12px;
     line-height: 18px;
 }
@@ -953,12 +974,14 @@ input[type="checkbox"].visually-hidden {
 
 .sort-title {
     margin-right: 40px;
+    padding-top: 5px;
 }
 
 .seach-results-and-sort ul {
     display: flex;
     margin: 0;
     padding: 0;
+    padding-top: 5px;
     list-style: none;
 }
 
